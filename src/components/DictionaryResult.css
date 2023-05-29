@@ -1,0 +1,48 @@
+
+.dictionary-result {
+    margin-top: 20px;
+  }
+  
+  .dictionary-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: black;
+    border-radius: 5px;
+  }
+  
+  .meaning-item {
+    margin-bottom: 10px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  
+  h4 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  ul {
+    margin-bottom: 10px;
+  }
+  
+  li {
+    margin-bottom: 4px;
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
