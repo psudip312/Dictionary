@@ -5,13 +5,15 @@ import "./App.css";
 const DictionaryApp = () => {
   const [inputValue, setInputValue] = useState("");
   const [dictionaryData, setDictionaryData] = useState(null);
+  const [show, setShow] = useState(false);
+
 
   const handleChange = (event) => {
     setInputValue(event.target.value);
   };
 
   const handleSearch = async (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     try {
       const response = await axios.get(
         `https://api.dictionaryapi.dev/api/v2/entries/en/${inputValue}`
@@ -19,6 +21,7 @@ const DictionaryApp = () => {
       setDictionaryData(response.data);
     } catch (error) {
       console.error("Error:", error);
+setShow(true);
     }
   };
   console.log("dictionary ko data", dictionaryData);
@@ -35,13 +38,13 @@ const DictionaryApp = () => {
         />
         <button onClick={handleSearch}>Search</button>
       </div>
-      {dictionaryData ? (
-        <DictionaryResult data={dictionaryData} />
-      ) : (
-        "No result found"
-      )}{" "}
+        {dictionaryData && <DictionaryResult data={dictionaryData} /> }
+        {dictionaryData === null && show && (
+          <p className="no-results">No results found.</p>
+        )} 
     </div>
   );
 };
 
 export default DictionaryApp;
+ 
